@@ -59,17 +59,20 @@
 
         {% for new in data %}
         <div class="card">
-          <a href="{{ article.link }}">
-            {% if article.image_url %}
-                <img class="card-img-top" src="{{ article.image_url }}" alt="Card image cap">
-            {% endif %}
+          <a href="{{ new.imgurl }}">
+            <img class="card-img-top" src="{{ new.imgurl }}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{ article.title}}</h5>
-                <p class="card-text">{{ article.description }}</p>
+                <h5 class="card-title">{{ new.title}}</h5>
+                <h6 class="card-title">{{ new.category}}</h6>
+                <p class="card-text">{{ new.content }}</p>
+                <p class="card-text">{{ new.author }}</p>
             </div>
             </a>
         </div>
         {% endfor %}
+        
+        {{data}}
+        
         
       </div>
     </div>
